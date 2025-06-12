@@ -1,0 +1,131 @@
+.swapContainer {
+  max-width: 600px;
+  min-width: 450px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, sans-serif;
+  color: #2d3436;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #6c5ce7;
+    font-weight: 600;
+    font-size: 1.75rem;
+  }
+}
+
+.swapForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputRow {
+  display: flex;
+  border: 1px solid #dfe6e9;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+
+  &:focus-within {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+  }
+}
+
+.amountInput {
+  flex: 1;
+  border: none;
+  font-size: 1.25rem;
+  outline: none;
+  background: transparent;
+  color: #2d3436;
+
+  &::placeholder {
+    color: #b2bec3;
+  }
+
+  &:disabled {
+    background: #f8f9fa;
+    cursor: not-allowed;
+  }
+}
+
+.swapButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.swapButton {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.25rem;
+
+  &:hover:not(:disabled) {
+    transform: rotate(180deg);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95) rotate(180deg);
+  }
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.errorMessage {
+  color: #d63031;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  padding: 0 0.5rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #636e72;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #d63031;
+}
+
+@media (max-width: 600px) {
+  .swapContainer {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .amountInput {
+    font-size: 1.1rem;
+  }
+}
